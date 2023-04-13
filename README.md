@@ -176,6 +176,6 @@ Feel free to check the [issues page](https://github.com/monicah79/Capstone-ruby/
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/monicah79/Capstone-ruby/blob/group-project/license) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
