@@ -1,33 +1,23 @@
 require 'date'
-
 class Item
-  attr_reader :id, :genre, :author, :source, :label, :publish_date, :archived
+  attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
   def initialize(id = Random.rand(1..1000))
     @id = id
-    @genre = nil
-    @author = nil
-    @source = nil
-    @publish_date = nil
+    @genre = Genre
+    @author = Author
+    @source = Source
+    @label = Label
+    @publish_date = published_date
     @archived = false
   end
 
-  def move_to_archive
-    @archived = true if can_be_archived
+  def can_be_archived?
+    years_since_publication = (Date.today - Date.parse(published_date)).to_i / 365
+    years_since_publication > 10
   end
 
-  private
-
-  def can_be_archived
-    begin
-      publish_date = Date.parse(@publish_date)
-    rescue stardardError
-      publish_date = nil
-    end
-    if publish_date.nil
-      false
-    else
-      (Date.today.year - publish_date.year) > 10
-    end
+  def move_to_archive
+    @archived = true if can_be_archived?
   end
 end

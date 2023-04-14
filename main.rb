@@ -1,4 +1,5 @@
-require_relative 'app'
+require_relative 'item'
+
 class Main
   def initialize
     app = App.new
