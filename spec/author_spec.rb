@@ -2,7 +2,7 @@ require 'date'
 require_relative '../author'
 
 describe Author do
-  let(:author) { Author.new('Salwa', 'Ballouti') }
+  let(:author) { Author.new('Abdifatah', 'bakayle') }
   let(:game) { double('game') }
 
   describe '#initialize' do
@@ -11,11 +11,11 @@ describe Author do
     end
 
     it 'should set the first name' do
-      expect(author.first_name).to eq('Salwa')
+      expect(author.first_name).to eq('Abdifatah')
     end
 
     it 'should set the last name' do
-      expect(author.last_name).to eq('Ballouti')
+      expect(author.last_name).to eq('bakayle')
     end
 
     it 'should set an empty array for items' do
@@ -25,7 +25,7 @@ describe Author do
 
   describe '#full_name' do
     it 'should return the full name' do
-      expect(author.full_name).to eq('Salwa Ballouti')
+      expect(author.full_name).to eq('Abdifatah bakayle')
     end
   end
 end
