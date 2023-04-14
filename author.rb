@@ -5,11 +5,19 @@ class Author < Item
 
   @id_counter = 0
 
-  def initialize(first_name = '', last_name = '', _items = [])
-    super()
-    @id_counter ||= 0
-    @id_counter += 1
-    @id = @id_counter
+  # def initialize(first_name = '', last_name = '', _items = [])
+  #   super()
+  #   @id_counter ||= 0
+  #   @id_counter += 1
+  #   @id = @id_counter
+  #   @first_name = first_name
+  #   @last_name = last_name
+  #   @items = []
+  # end
+
+
+  def initialize(id, first_name, last_name)
+    @id = id
     @first_name = first_name
     @last_name = last_name
     @items = []
