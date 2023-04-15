@@ -1,31 +1,24 @@
+require_relative 'genre'
+require 'date'
 class Item
-  attr_accessor :publish_date, :cover_state
+  attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
-  def initialize(publish_date, cover_state)
+  def initialize(id = Random.rand(1..1000), source = nil)
+    @id = id
+    @genre = Genre
+    @author = Author
+    @source = source
+    @label = Label
     @publish_date = publish_date
-    @cover_state = cover_state
+    @archived = false
   end
 
   def can_be_archived?
-    if @publish_date < (Time.now - 10.years).to_date
-      true
-    else
-      @cover_state == 'bad'
-    end
+    years_since_publication = (Date.today - Date.parse(publish_date)).to_i / 365
+    years_since_publication > 10 || cover_state == 'Bad'
   end
 
-  def add_author=(author)
-    @author = author
-    author.items.push(self) unless author.items.include?(self)
-  end
-
-  def add_label=(label)
-    @label = label
-    label.items << self unless label.items.include?(self)
-  end
-
-  def add_genre=(genre)
-    @genre = genre
-    genre.items.push(self) unless genre.items.include?(self)
+  def move_to_archive
+    @archived = true if can_be_archived?
   end
 end

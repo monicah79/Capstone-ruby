@@ -3,7 +3,7 @@ require_relative '../book'
 describe Book do
   describe '#can_be_archived?' do
     context 'when the publish date is more than 10 years ago' do
-      let(:book) { Book.new('Title', 'Publisher', 'Good', '2010-03-28') }
+      let(:book) { Book.new('Title', 'Author', 'Good', '2010-03-28') }
 
       it 'returns true' do
         expect(book.can_be_archived?).to be_truthy
