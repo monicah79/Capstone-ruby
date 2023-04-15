@@ -39,16 +39,25 @@ class Main
         @app.list_labels
       when '6'
         @app.list_authors
-      when '7'
-        @app.add_book
-      when '8'
-        @app.add_music_album
-      when '9'
-        @app.add_game
-      when '0'
-        @app.close_app
-        exit
+      else
+        handle_add_option(option)
       end
+    end
+  end
+
+  def handle_add_option(option)
+    case option
+    when '7'
+      @app.add_book
+    when '8'
+      @app.add_music_album
+    when '9'
+      @app.add_game
+    when '0'
+      @app.close_app
+      exit
+    else
+      puts 'Invalid option. Please try again.'
     end
   end
 end
