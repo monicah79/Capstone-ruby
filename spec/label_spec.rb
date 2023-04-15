@@ -1,4 +1,4 @@
-require_relative '../label'
+require_relative '../library/label'
 
 RSpec.describe Label do
   let(:label) { Label.new('Groceries', 'green') }

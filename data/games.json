@@ -1,65 +1,14 @@
-{
-  "games": [
-    {
-      "id": 1,
-      "title": "Harry Potter and the Philosopher's Stone",
-      "multiplayer": true,
-      "last_played_at": "30000101",
-      "publish_date": "2020/01/01"
-    },
-    {
-      "id": 476,
-      "title": "Harry Potter and the Philosopher's Stone",
-      "multiplayer": true,
-      "last_played_at": "30000101",
-      "publish_date": "2020/01/01"
-    },
-    {
-      "id": 356,
-      "title": "qoslaaye",
-      "multiplayer": true,
-      "last_played_at": "2022-2-2",
-      "publish_date": "2022/02/01"
-    }
-  ],
-  "authors": [
-    {
-      "id": 1,
-      "first_name": " Sarah ",
-      "last_name": "J. Maas",
-      "items": [
-        {
-          "id": 1,
-          "title": "Harry Potter and the Philosopher's Stone",
-          "multiplayer": true,
-          "last_played_at": "30000101",
-          "publish_date": "2020/01/01"
-        },
-        {
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "first_name": " Sarah ",
-      "last_name": "J. Maas",
-      "items": [
-
-      ]
-    },
-    {
-      "id": 1,
-      "first_name": "Hussein",
-      "last_name": "p",
-      "items": [
-        {
-          "id": 356,
-          "title": "qoslaaye",
-          "multiplayer": true,
-          "last_played_at": "2022-2-2",
-          "publish_date": "2022/02/01"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "author_id": null,
+    "multiplayer": true,
+    "last_played_at": "2021-10-10",
+    "publish_date": "2020-10-10"
+  },
+  {
+    "author_id": null,
+    "multiplayer": true,
+    "last_played_at": "2021-10-10",
+    "publish_date": "2020-10-10"
+  }
+]

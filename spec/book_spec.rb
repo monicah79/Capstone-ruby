@@ -1,28 +1,61 @@
-require_relative '../book'
+require 'rspec'
+require_relative '../library/book'
+require 'date'
 
 describe Book do
-  describe '#can_be_archived?' do
-    context 'when the publish date is more than 10 years ago' do
-      let(:book) { Book.new('Title', 'Author', 'Good', '2010-03-28') }
+  let(:title) { 'The Great Gatsby' }
+  let(:publish_date) { '1925-04-10' }
+  let(:publisher) { "Charles Scribner's Sons" }
+  let(:cover_state) { 'good' }
+  subject(:book) { described_class.new(title, publisher, publish_date, cover_state) }
+
+  describe '#initialize' do
+    it 'sets the title' do
+      expect(book.title).to eq(title)
+    end
+
+    it 'sets the publish date' do
+      expect(book.publish_date).to eq(publish_date)
+    end
+
+    it 'sets the publisher' do
+      expect(book.publisher).to eq(publisher)
+    end
+
+    it 'sets the cover state' do
+      expect(book.cover_state).to eq(cover_state)
+    end
+  end
+
+  describe '#add_author' do
+    it 'adds an author to the book' do
+      author = 'F. Scott Fitzgerald'
+      book.add_author(author)
+      expect(book.author).to include(author)
+    end
+  end
+
+  describe '#archived?' do
+    context 'when the book is archived' do
+      before { book.move_to_archive }
 
       it 'returns true' do
-        expect(book.can_be_archived?).to be_truthy
+        expect(book.archived).to be(true)
       end
     end
 
-    context 'when the cover state is bad' do
-      let(:book) { Book.new('Title', 'Publisher', 'Bad', '2020-03-28') }
+    describe 'when the cover state is bad' do
+      let(:cover_state) { 'bad' }
 
       it 'returns true' do
-        expect(book.can_be_archived?).to be_truthy
+        book.move_to_archive
+        expect(book.archived).to be(true)
       end
     end
 
-    context 'when neither of the above is true' do
-      let(:book) { Book.new('Title', 'Publisher', 'Good', '2022-03-28') }
-
+    describe 'when the book is not archived and the cover state is good' do
       it 'returns false' do
-        expect(book.can_be_archived?).to be_falsey
+        expect(book.archived).to be(false)
       end
     end
   end

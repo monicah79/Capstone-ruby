@@ -1,5 +1,5 @@
 require 'date'
-require_relative '../author'
+require_relative '../library/author'
 
 describe Author do
   let(:author) { Author.new('Abdifatah', 'bakayle') }
@@ -23,9 +23,10 @@ describe Author do
     end
   end
 
-  describe '#full_name' do
-    it 'should return the full name' do
-      expect(author.full_name).to eq('Abdifatah bakayle')
+  describe '#show_list' do
+    it '#show_list: empty' do
+      authors = Author.instance_variable_set(:@authors, [])
+      expect { puts authors }.to output('').to_stdout
     end
   end
 end
