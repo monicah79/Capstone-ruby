@@ -1,5 +1,4 @@
 require_relative 'item'
-require_relative 'item'
 require_relative 'book_list'
 
 class Main

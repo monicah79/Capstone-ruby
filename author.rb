@@ -3,21 +3,9 @@ require_relative 'item'
 class Author < Item
   attr_reader :id, :first_name, :last_name, :items
 
-  @id_counter = 0
-
-  # def initialize(first_name = '', last_name = '', _items = [])
-  #   super()
-  #   @id_counter ||= 0
-  #   @id_counter += 1
-  #   @id = @id_counter
-  #   @first_name = first_name
-  #   @last_name = last_name
-  #   @items = []
-  # end
-
-
-  def initialize(id, first_name, last_name)
-    @id = id
+  def initialize(first_name, last_name)
+    super(first_name, last_name)
+    @id = Random.rand(1..1000)
     @first_name = first_name
     @last_name = last_name
     @items = []
