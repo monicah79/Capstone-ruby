@@ -129,11 +129,18 @@ You can deploy this project using:
 - Twitter: [@MonicahWanjema](https://twitter.com/MonicaWanjema)
 - LinkedIn: [monicah-wanjema](https://www.linkedin.com/in/monicah-wanjema/)
 
-👤 **Author2**
+👤 **Abdifatah**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@AbdifatahYasin1](https://github.com/AbdifatahYasin1)
+- Twitter: [@CabdifataaxYuusuf](https://twitter.com/CabdifataaxYy)
+- LinkedIn: [Cabdifataax Yaasiin](https://www.linkedin.com/in/cabdifataax-yaasiin-69977019a/)
+
+👤 **M Nisar Ali**
+
+- GitHub: [@MNisarAli](https://github.com/MNisarAli)
+- Twitter: [@drnisar_ali](https://twitter.com/drnisar_ali)
+- LinkedIn: [Muhammad Nisar Ali](https://linkedin.com/in/muhammad-nisar-ali-45a865251)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
