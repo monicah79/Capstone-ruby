@@ -1,31 +1,50 @@
-require_relative '../game'
+require_relative '../library/game'
+require_relative '../library/author'
 
-RSpec.describe Game do
-  describe '#initialize' do
-    let(:game) { Game.new('Super Mario', true, '2020/10/10', '1990/10/10') }
+describe Game do
+  describe '#show_list' do
+    it '#show_list: empty' do
+      games = Game.instance_variable_set(:@games, [])
+      expect { games }.to output('').to_stdout
+    end
+  end
 
-    it 'should set an id' do
-      expect(game.id).to_not be_nil
+  describe 'test author basic method' do
+    before(:all) do
+      @game = Game.new('2000/02/02', false, '2020/02/02')
+      @author = Author.new('Abdifatah', 'bakayle')
+    end
+    it '#initialize' do
+      expect(@game.publish_date).to eq '2000/02/02'
+      expect(@game.multiplayer).to eq false
+      expect(@game.last_played_at).to eq '2020/02/02'
     end
 
-    it 'should set the title' do
-      expect(game.title).to eq('Super Mario')
+    it '#add_author : of Item' do
+      @game.add_author(@author)
+      expect(@game.author).to be @author
     end
 
-    it 'should set the multiplayer' do
-      expect(game.multiplayer).to eq(true)
+    it 'Game.all' do
+      expect(Game.all).to contain_exactly(@game)
+      game2 = Game.new('1999/02/01', false, '2010/02/01')
+      expect(Game.all).to contain_exactly(@game, game2)
     end
 
-    it 'should set the last played at' do
-      expect(game.last_played_at).to eq('2020/10/10')
+    it '#archived' do
+      @game.move_to_archive
+      expect(@game.archived).to eq true
     end
+  end
 
-    it 'should set the publish date' do
-      expect(game.publish_date).to eq('1990/10/10')
+  describe '#add_item' do
+    before(:all) do
+      @game = Game.new('1999/02/02', false, '2010/02/02')
+      @author = Author.new('Abdifatah', 'bakayle')
     end
-
-    it 'should set an empty array for authors' do
-      expect(game.authors).to be_empty
+    it 'author list of item' do
+      @author.add_item(@game)
+      expect(@author.items).to eq [@game]
     end
   end
 end
